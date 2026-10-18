@@ -1,9 +1,9 @@
 /* Página de vendas estática (GitHub Pages).
-   O pagamento é feito na Kiwify: todo botão com data-checkout leva para KIWIFY_URL.
+   O pagamento é feito na Monetizze: todo botão com data-checkout leva para CHECKOUT_URL.
    Para trocar o link, mude só a linha abaixo. Os parâmetros da URL da página
    (utm_*, fbclid, src...) são repassados para o checkout. */
 (function () {
-  var KIWIFY_URL = ''; // ex.: 'https://pay.kiwify.com.br/XXXXXXX'
+  var CHECKOUT_URL = 'https://app.monetizze.com.br/checkout/DDL383769';
   var PIXEL_ID = '1723689928729300';
   var PRECO = 9.00;
 
@@ -15,8 +15,8 @@
   function brl(v) { return 'R$ ' + Number(v).toFixed(2).replace('.', ','); }
 
   function linkCheckout() {
-    if (!KIWIFY_URL) return '';
-    var url = new URL(KIWIFY_URL);
+    if (!CHECKOUT_URL) return '';
+    var url = new URL(CHECKOUT_URL);
     new URLSearchParams(location.search).forEach(function (v, k) { if (!url.searchParams.has(k)) url.searchParams.set(k, v); });
     return url.toString();
   }
