@@ -17,7 +17,7 @@
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--txt);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 button{font:inherit;color:inherit}
-em{font-style:italic;color:transparent;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text}
+em{font-style:normal;font-weight:700;color:transparent;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text}
 .wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter)}
 
 /* ---------- HERO ---------- */
