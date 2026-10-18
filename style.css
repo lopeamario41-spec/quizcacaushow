@@ -111,13 +111,23 @@ em{font-style:italic;color:transparent;background:var(--gold-grad);-webkit-backg
 .reel{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1080px;margin:42px auto 0;padding:0 var(--gutter)}
 .reel .player{border-radius:16px;border-color:var(--line);box-shadow:none;transition:border-color .3s,transform .3s}
 .reel .player:hover{border-color:var(--line-gold)}
+.reel-box{position:relative}
+.arrow{display:none}
 .dots{display:none}
 
 @media (max-width:820px){
   .reel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gutter) 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .reel::-webkit-scrollbar{display:none}
   .reel-item{flex:0 0 86%;scroll-snap-align:center}
+  .arrow{display:grid;place-items:center;position:absolute;top:50%;z-index:5;width:44px;height:44px;margin-top:-28px;border-radius:50%;cursor:pointer;
+    color:#120d02;background:var(--gold-grad);border:0;box-shadow:0 10px 26px -8px rgba(0,0,0,.9),0 0 0 4px rgba(0,0,0,.55);transition:opacity .25s,transform .2s}
+  .arrow svg{width:20px;height:20px}
+  .arrow:active{transform:scale(.92)}
+  .arrow.prev{left:8px}
+  .arrow.next{right:8px}
+  .arrow[disabled]{opacity:0;pointer-events:none}
   .dots{display:flex;justify-content:center;gap:7px;margin-top:18px}
+  .dots i{cursor:pointer}
   .dots i{width:6px;height:6px;border-radius:6px;background:rgba(255,255,255,.18);transition:width .3s,background .3s}
   .dots i.on{width:22px;background:var(--gold)}
 }

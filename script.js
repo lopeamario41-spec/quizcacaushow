@@ -40,16 +40,37 @@ players.forEach(function (p) {
   var reel = document.getElementById('reel'), dots = document.getElementById('dots');
   if (!reel || !dots) return;
   var items = reel.children;
-  for (var i = 0; i < items.length; i++) dots.appendChild(document.createElement('i'));
+  var prev = document.getElementById('prev'), next = document.getElementById('next'), atual = 0, trava = 0;
+  function ir(i) {
+    i = Math.max(0, Math.min(items.length - 1, i));
+    atual = i; trava = Date.now() + 700; pinta(i);
+    var it = items[i];
+    reel.scrollTo({ left: it.offsetLeft - (reel.clientWidth - it.offsetWidth) / 2, behavior: 'smooth' });
+  }
+  for (var i = 0; i < items.length; i++) {
+    var d = document.createElement('i');
+    d.setAttribute('aria-label', 'Vídeo ' + (i + 1));
+    d.addEventListener('click', ir.bind(null, i));
+    dots.appendChild(d);
+  }
+  if (prev) prev.addEventListener('click', function () { ir(atual - 1); });
+  if (next) next.addEventListener('click', function () { ir(atual + 1); });
   function mark() {
     var c = reel.scrollLeft + reel.clientWidth / 2, best = 0, dist = 1e9;
     for (var i = 0; i < items.length; i++) {
       var mid = items[i].offsetLeft + items[i].offsetWidth / 2, dd = Math.abs(mid - c);
       if (dd < dist) { dist = dd; best = i; }
     }
-    for (var j = 0; j < dots.children.length; j++) dots.children[j].classList.toggle('on', j === best);
+    if (Date.now() < trava) return; // enquanto a seta anima, vale o destino dela
+    atual = best; pinta(best);
+  }
+  function pinta(n) {
+    for (var j = 0; j < dots.children.length; j++) dots.children[j].classList.toggle('on', j === n);
+    if (prev) prev.disabled = n === 0;
+    if (next) next.disabled = n === items.length - 1;
   }
   reel.addEventListener('scroll', mark, { passive: true });
+  reel.addEventListener('scrollend', function () { trava = 0; mark(); });
   mark();
 })();
 

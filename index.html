@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10" />
+<link rel="stylesheet" href="style.css?v=11" />
 </head>
 <body>
 
@@ -87,6 +87,9 @@
     <p class="lead">Fomos às ruas descobrir o que as mulheres realmente pensam sobre tamanho — sem roteiro, sem filtro.</p>
   </div>
 
+  <div class="reel-box">
+  <button class="arrow prev" id="prev" type="button" aria-label="Vídeo anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <button class="arrow next" id="next" type="button" aria-label="Próximo vídeo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
   <div class="reel" id="reel">
     <div class="reel-item"><div class="player" data-player>
       <video playsinline preload="metadata"><source src="videos/video2.mp4#t=0.1" type="video/mp4" /><source src="https://video.wixstatic.com/video/40ff5c_d531765213884d5da377fec5aa81bcf1/720p/mp4/file.mp4#t=0.1" type="video/mp4" /></video>
@@ -119,7 +122,8 @@
       <div class="bar"><span></span></div>
     </div></div>
   </div>
-  <div class="dots" id="dots" aria-hidden="true"></div>
+  </div>
+  <div class="dots" id="dots"></div>
 
   <div class="wrap">
     <div class="close">
@@ -145,7 +149,7 @@
   <span class="toast-txt"><b id="toast-name">Carlos H.</b><span id="toast-city">garantiu o acesso · Campinas, SP</span></span>
 </div>
 
-<script src="script.js?v=10"></script>
+<script src="script.js?v=11"></script>
 <script src="checkout.js?v=2"></script>
 </body>
 </html>
