@@ -271,3 +271,18 @@ em{font-style:normal;font-weight:700;color:transparent;background:var(--gold-gra
   .vsl .play{width:112px;height:112px;border-width:2px}
   .vsl .play .i-play{width:42px;height:42px;margin-left:6px}
 }
+
+/* borda do play um pouco mais grossa */
+.vsl .play{border-width:3.5px}
+.vsl .play .i-play{stroke-width:2.1}
+@media (max-width:820px){.vsl .play{border-width:3px}}
+
+/* aviso em cima do vídeo mandando clicar (some quando o vídeo começa) */
+.player-call{position:absolute;top:16px;left:50%;z-index:3;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+  padding:10px 18px;border-radius:999px;font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#120d02;
+  background:var(--gold-grad);box-shadow:0 10px 26px -8px rgba(0,0,0,.8);pointer-events:none;animation:chama 1.6s ease-in-out infinite;transition:opacity .3s}
+.player-call svg{width:18px;height:18px;flex:none}
+@keyframes chama{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(4px)}}
+.player.started .player-call{opacity:0;animation:none}
+.player-hint{font-size:13px;font-weight:800;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+@media (max-width:420px){.player-call{top:10px;padding:8px 14px;font-size:12px;letter-spacing:.04em}.player-call svg{width:16px;height:16px}}
