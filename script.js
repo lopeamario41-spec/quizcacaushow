@@ -19,18 +19,22 @@ players.forEach(function (p) {
   v.addEventListener('timeupdate', function () { if (v.duration) bar.style.width = (v.currentTime / v.duration * 100) + '%'; });
 });
 
-// Contagem regressiva de 24h (fica guardada no aparelho)
+// Contagem regressiva até a meia-noite de HOJE (relógio do aparelho) + data de hoje
 (function () {
-  var KEY = 'cd_end_v1', end = 0, el = document.getElementById('cd');
-  try { end = parseInt(localStorage.getItem(KEY) || '0', 10); } catch (e) {}
-  if (!end || end < Date.now()) end = Date.now() + 864e5;
-  try { localStorage.setItem(KEY, end); } catch (e) {}
+  var h = document.getElementById('cd-h'), m = document.getElementById('cd-m'), s = document.getElementById('cd-s'), d = document.getElementById('hoje');
   function pad(n) { return String(n).padStart(2, '0'); }
   function tick() {
-    var d = Math.max(0, end - Date.now());
-    var h = Math.floor(d / 36e5); d -= h * 36e5;
-    var m = Math.floor(d / 6e4); d -= m * 6e4;
-    if (el) el.textContent = pad(h) + ':' + pad(m) + ':' + pad(Math.floor(d / 1000));
+    var agora = new Date(), fim = new Date(agora.getFullYear(), agora.getMonth(), agora.getDate() + 1);
+    var r = Math.max(0, fim - agora);
+    var H = Math.floor(r / 36e5); r -= H * 36e5;
+    var M = Math.floor(r / 6e4); r -= M * 6e4;
+    if (h) h.textContent = pad(H);
+    if (m) m.textContent = pad(M);
+    if (s) s.textContent = pad(Math.floor(r / 1000));
+    if (d) {
+      var sem = agora.toLocaleDateString('pt-BR', { weekday: 'long' });
+      d.textContent = sem.charAt(0).toUpperCase() + sem.slice(1) + ', ' + pad(agora.getDate()) + '/' + pad(agora.getMonth() + 1) + '/' + agora.getFullYear();
+    }
   }
   tick(); setInterval(tick, 1000);
 })();

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=12" />
+<link rel="stylesheet" href="style.css?v=13" />
 </head>
 <body>
 
@@ -49,16 +49,24 @@
 
   <div class="wrap">
     <div class="offer">
-      <div class="offer-top">
-        <span class="tag">Condição de lançamento</span>
-        <span class="timer" aria-live="polite">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
-          encerra em <b id="cd">23:59:59</b>
-        </span>
+      <div class="deadline">
+        <p class="deadline-tit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>
+          A promoção termina <b>hoje</b>
+        </p>
+        <p class="deadline-data" id="hoje">19/10/2026</p>
+        <div class="clock" aria-live="polite">
+          <div><b id="cd-h">23</b><span>horas</span></div>
+          <i>:</i>
+          <div><b id="cd-m">59</b><span>min</span></div>
+          <i>:</i>
+          <div><b id="cd-s">59</b><span>seg</span></div>
+        </div>
       </div>
 
       <div class="price">
-        <span class="price-old">de <s>R$ 279,00</s></span>
+        <span class="price-old">De <s>R$ 279,00</s></span>
+        <span class="price-por">por apenas</span>
         <span class="price-new"><small>R$</small>9<small>,00</small></span>
         <span class="price-note">pagamento único · acesso vitalício</span>
       </div>
@@ -124,6 +132,81 @@
   </div>
   <div class="dots" id="dots"></div>
 
+  <!-- o que você recebe -->
+  <div class="wrap">
+    <div class="pack">
+      <p class="eyebrow">O que você recebe</p>
+      <h2 class="h2">O passo a passo completo,<br/><em>em 30 videoaulas.</em></h2>
+      <div class="pack-grid">
+        <div class="pack-item destaque">
+          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="15" height="14" rx="2.5"/><path d="m17.5 10 4-2.5v9l-4-2.5"/></svg></span>
+          <div><b>30 videoaulas passo a passo</b><span>Cada exercício explicado em vídeo, do primeiro dia em diante, no seu ritmo.</span></div>
+        </div>
+        <div class="pack-item">
+          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/><path d="M3 3l18 18"/></svg></span>
+          <div><b>Sem remédios</b><span>Nada de comprimidos, cápsulas ou fórmulas.</span></div>
+        </div>
+        <div class="pack-item">
+          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg></span>
+          <div><b>Sem cirurgia</b><span>Nenhum procedimento, nenhuma clínica, nenhum aparelho.</span></div>
+        </div>
+        <div class="pack-item">
+          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span>
+          <div><b>Apenas as suas mãos</b><span>Técnicas manuais que você faz em casa, em poucos minutos por dia.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- acesso em qualquer tela -->
+    <div class="devices">
+      <div class="devices-art" aria-hidden="true">
+        <div class="monitor">
+          <div class="mon-screen">
+            <div class="app">
+              <div class="app-top"><span class="app-logo"></span><b>Método Masculino Natural</b><span class="app-tag">Acesso vitalício</span></div>
+              <div class="app-body">
+                <div class="app-player"><span class="app-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span><span class="app-bar"><i></i></span></div>
+                <ul class="app-list">
+                  <li class="ok"><span></span>Aula 01</li>
+                  <li class="ok"><span></span>Aula 02</li>
+                  <li class="on"><span></span>Aula 03</li>
+                  <li><span></span>Aula 04</li>
+                  <li><span></span>Aula 05</li>
+                  <li><span></span>Aula 06</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mon-neck"></div><div class="mon-foot"></div>
+        </div>
+        <div class="phone">
+          <div class="ph-screen">
+            <div class="app sm">
+              <div class="app-top"><span class="app-logo"></span><b>Método</b></div>
+              <div class="app-player"><span class="app-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span><span class="app-bar"><i></i></span></div>
+              <ul class="app-list">
+                <li class="ok"><span></span>Aula 01</li>
+                <li class="ok"><span></span>Aula 02</li>
+                <li class="on"><span></span>Aula 03</li>
+                <li><span></span>Aula 04</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="devices-txt">
+        <p class="eyebrow">Acesso para sempre</p>
+        <h3 class="h3">Assista onde quiser,<br/><em>quantas vezes quiser.</em></h3>
+        <p class="lead">No celular, no tablet ou no computador. Pague uma vez e o curso é seu para sempre, sem mensalidade.</p>
+        <ul class="chips">
+          <li>Pagamento único de R$ 9</li>
+          <li>Sem mensalidade</li>
+          <li>Acesso vitalício</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <div class="wrap">
     <div class="close">
       <p class="close-txt">Tudo o que você precisa cabe no seu celular.<br/><em>Hoje por menos que um lanche.</em></p>
@@ -148,7 +231,7 @@
   <span class="toast-txt"><b id="toast-name">Carlos H.</b><span id="toast-city">garantiu o acesso · Campinas, SP</span></span>
 </div>
 
-<script src="script.js?v=11"></script>
+<script src="script.js?v=12"></script>
 <script src="checkout.js?v=5"></script>
 </body>
 </html>
