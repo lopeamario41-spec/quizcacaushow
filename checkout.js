@@ -3,9 +3,9 @@
    Para trocar o link, mude só a linha abaixo. Os parâmetros da URL da página
    (utm_*, fbclid, src...) são repassados para o checkout. */
 (function () {
-  var CHECKOUT_URL = 'https://pay.monetizze.com.br/KDJ467952';
+  var CHECKOUT_URL = 'https://pay.monetizze.com.br/KLK467702';
   var PIXEL_ID = '1723689928729300';
-  var PRECO = 9.00;
+  var PRECO = 29.00;
 
   /* ---------- pixel do Facebook ---------- */
   !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
