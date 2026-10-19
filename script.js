@@ -6,6 +6,7 @@ players.forEach(function (p) {
   var btn = p.querySelector('.play');
   var bar = p.querySelector('.bar span');
   function toggle() {
+    if (p.ativarSom && p.classList.contains('previa')) return p.ativarSom();
     if (v.paused) {
       players.forEach(function (o) { var ov = o.querySelector('video'); if (ov !== v && !ov.paused) ov.pause(); });
       v.play();
@@ -18,6 +19,25 @@ players.forEach(function (p) {
   v.addEventListener('ended', function () { p.classList.remove('playing'); });
   v.addEventListener('timeupdate', function () { if (v.duration) bar.style.width = (v.currentTime / v.duration * 100) + '%'; });
 });
+
+// Vídeo principal: começa sozinho SEM som; o botão "clique para ouvir" volta para 0:00 com som.
+// Se o aparelho bloquear o início automático, o mesmo botão começa o vídeo com som.
+(function () {
+  var p = document.getElementById('vslPlayer');
+  if (!p) return;
+  var v = p.querySelector('video'), som = p.querySelector('.som');
+  v.muted = true;
+  var t = v.play(); if (t && t.catch) t.catch(function () { });
+  p.ativarSom = function () {
+    p.classList.remove('previa');
+    players.forEach(function (o) { var ov = o.querySelector('video'); if (ov !== v && !ov.paused) ov.pause(); });
+    v.muted = false; v.currentTime = 0;
+    var r = v.play(); if (r && r.catch) r.catch(function () { });
+  };
+  som.addEventListener('click', function (e) { e.stopPropagation(); p.ativarSom(); });
+  // se outro vídeo da página começar durante a prévia, a prévia para
+  players.forEach(function (o) { if (o !== p) o.querySelector('video').addEventListener('play', function () { if (p.classList.contains('previa')) v.pause(); }); });
+})();
 
 // Contagem regressiva até a meia-noite de HOJE (relógio do aparelho) + data de hoje
 (function () {

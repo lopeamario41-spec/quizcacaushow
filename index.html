@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=15" />
+<link rel="stylesheet" href="style.css?v=16" />
 </head>
 <body>
 
@@ -34,8 +34,8 @@
 
   <!-- vídeo principal: borda infinita no celular -->
   <div class="vsl">
-    <div class="player" data-player>
-      <video playsinline preload="metadata">
+    <div class="player previa" data-player id="vslPlayer">
+      <video playsinline muted autoplay preload="auto">
         <source src="videos/vsl29.mp4#t=0.1" type="video/mp4" />
       </video>
       <button class="play" type="button" aria-label="Reproduzir vídeo">
@@ -47,6 +47,10 @@
         Clique no vídeo para assistir
       </div>
       <div class="player-hint">Assista com o som ligado</div>
+      <button class="som" type="button" aria-label="Ativar o som e assistir do começo">
+        <span class="som-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m22 9-6 6M16 9l6 6"/></svg></span>
+        <span class="som-txt"><b>Seu vídeo já começou</b><span>Clique para ouvir</span></span>
+      </button>
       <div class="bar"><span></span></div>
     </div>
   </div>
@@ -235,7 +239,7 @@
   <span class="toast-txt"><b id="toast-name">Carlos H.</b><span id="toast-city">garantiu o acesso · Campinas, SP</span></span>
 </div>
 
-<script src="script.js?v=12"></script>
+<script src="script.js?v=13"></script>
 <script src="checkout.js?v=6"></script>
 </body>
 </html>
