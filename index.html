@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=16" />
+<link rel="stylesheet" href="style.css?v=17" />
 </head>
 <body>
 
@@ -48,8 +48,11 @@
       </div>
       <div class="player-hint">Assista com o som ligado</div>
       <button class="som" type="button" aria-label="Ativar o som e assistir do começo">
-        <span class="som-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m22 9-6 6M16 9l6 6"/></svg></span>
-        <span class="som-txt"><b>Seu vídeo já começou</b><span>Clique para ouvir</span></span>
+        <span class="som-ic">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 4.7 6.6 8.5H3.8A1.8 1.8 0 0 0 2 10.3v3.4a1.8 1.8 0 0 0 1.8 1.8h2.8l4.4 3.8a.9.9 0 0 0 1.5-.7V5.4a.9.9 0 0 0-1.5-.7z"/></svg>
+          <span class="som-eq"><i></i><i></i><i></i><i></i></span>
+        </span>
+        <span class="som-txt"><b>Seu vídeo já começou</b><span>Toque para ouvir com som</span></span>
       </button>
       <div class="bar"><span></span></div>
     </div>
@@ -140,32 +143,29 @@
   </div>
   <div class="dots" id="dots"></div>
 
-  <!-- o que você recebe -->
+  <!-- o que você recebe: pilha de valor -->
   <div class="wrap">
-    <div class="pack">
+    <div class="valor">
       <p class="eyebrow">O que você recebe</p>
-      <h2 class="h2">O passo a passo completo,<br/><em>em 30 videoaulas.</em></h2>
-      <div class="pack-grid">
-        <div class="pack-item destaque">
-          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="15" height="14" rx="2.5"/><path d="m17.5 10 4-2.5v9l-4-2.5"/></svg></span>
-          <div><b>30 videoaulas passo a passo</b><span>Cada exercício explicado em vídeo, do primeiro dia em diante, no seu ritmo.</span></div>
+      <h2 class="h2s">Tudo o que você precisa, <span class="ouro">passo a passo.</span></h2>
+      <div class="valor-card">
+        <div class="valor-top"><span class="valor-tag">Acesso completo</span><b>Método Masculino Natural</b></div>
+        <ul class="valor-lista">
+          <li><span class="v-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="v-tx"><b>30 videoaulas passo a passo</b><small>Cada exercício explicado em vídeo, do primeiro dia em diante.</small></span><span class="v-pr">R$ 197</span></li>
+          <li><span class="v-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="v-tx"><b>Técnicas 100% naturais, só com as mãos</b><small>Sem remédios, sem cirurgia e sem aparelhos.</small></span><span class="v-pr">R$ 47</span></li>
+          <li><span class="v-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="v-tx"><b>Rotina de poucos minutos por dia</b><small>Feita em casa, no seu ritmo e com total discrição.</small></span><span class="v-pr">R$ 35</span></li>
+          <li><span class="v-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="v-tx"><b>Acesso vitalício no celular ou computador</b><small>Pague uma vez e assista quantas vezes quiser.</small></span><span class="v-pr v-inc">incluso</span></li>
+          <li><span class="v-ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><span class="v-tx"><b>Atendimento pelo WhatsApp</b><small>Dúvida? É só responder a mensagem com o seu acesso.</small></span><span class="v-pr v-inc">incluso</span></li>
+        </ul>
+        <div class="valor-total">
+          <span>Valor total</span><s>R$ 279,00</s>
         </div>
-        <div class="pack-item">
-          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/><path d="M3 3l18 18"/></svg></span>
-          <div><b>Sem remédios</b><span>Nada de comprimidos, cápsulas ou fórmulas.</span></div>
-        </div>
-        <div class="pack-item">
-          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg></span>
-          <div><b>Sem cirurgia</b><span>Nenhum procedimento, nenhuma clínica, nenhum aparelho.</span></div>
-        </div>
-        <div class="pack-item">
-          <span class="pack-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span>
-          <div><b>Apenas as suas mãos</b><span>Técnicas manuais que você faz em casa, em poucos minutos por dia.</span></div>
+        <div class="valor-hoje">
+          <span>Hoje, por apenas</span><b>R$ 29,00</b>
         </div>
       </div>
     </div>
 
-    <!-- acesso em qualquer tela -->
     <div class="devices">
       <div class="devices-art" aria-hidden="true">
         <div class="monitor">
@@ -204,7 +204,7 @@
       </div>
       <div class="devices-txt">
         <p class="eyebrow">Acesso para sempre</p>
-        <h3 class="h3">Assista onde quiser,<br/><em>quantas vezes quiser.</em></h3>
+        <h3 class="h3s">Assista onde quiser, <span class="ouro">quantas vezes quiser.</span></h3>
         <p class="lead">No celular, no tablet ou no computador. Pague uma vez e o curso é seu para sempre, sem mensalidade.</p>
         <ul class="chips">
           <li>Pagamento único de R$ 29</li>
@@ -216,13 +216,43 @@
   </div>
 
   <div class="wrap">
-    <div class="close">
-      <p class="close-txt">Tudo o que você precisa cabe no seu celular.<br/><em>Hoje pelo preço de um lanche.</em></p>
+    <!-- garantia -->
+    <div class="garantia">
+      <div class="selo" aria-hidden="true"><div class="selo-in"><b>7</b><span>dias</span></div></div>
+      <div>
+        <h3 class="h3s">Garantia incondicional de <span class="ouro">7 dias</span></h3>
+        <p>Assista às aulas, comece os exercícios e veja por você mesmo. Se em até 7 dias achar que não é para você, devolvemos <b>100% do seu dinheiro</b>. O risco é todo nosso.</p>
+      </div>
+    </div>
+
+    <!-- perguntas -->
+    <div class="faq">
+      <p class="eyebrow">Dúvidas</p>
+      <h2 class="h2s">Perguntas <span class="ouro">frequentes</span></h2>
+      <div class="faq-lista">
+        <details class="faq-it"><summary>Como recebo o acesso?<span class="faq-mais"></span></summary><p>Assim que o pagamento é aprovado, você recebe no seu WhatsApp o link do curso com o seu login e a sua senha. Leva poucos minutos.</p></details>
+        <details class="faq-it"><summary>Preciso comprar algum remédio ou aparelho?<span class="faq-mais"></span></summary><p>Não. O método usa só exercícios manuais, que você faz em casa. Nada de remédios, cirurgia ou aparelhos.</p></details>
+        <details class="faq-it"><summary>A compra é discreta?<span class="faq-mais"></span></summary><p>Sim. O curso é 100% digital: nada é enviado para a sua casa e você assiste pelo seu próprio celular ou computador.</p></details>
+        <details class="faq-it"><summary>Por quanto tempo tenho acesso?<span class="faq-mais"></span></summary><p>Para sempre. É um pagamento único, sem mensalidade, e você pode rever as aulas quantas vezes quiser.</p></details>
+        <details class="faq-it"><summary>E se eu não gostar?<span class="faq-mais"></span></summary><p>Você tem 7 dias de garantia. Se não gostar, pede o reembolso e recebe o seu dinheiro de volta.</p></details>
+        <details class="faq-it"><summary>Quais as formas de pagamento?<span class="faq-mais"></span></summary><p>PIX, com liberação na hora, ou cartão de crédito. O pagamento é processado pela Monetizze, com os seus dados protegidos.</p></details>
+      </div>
+    </div>
+
+    <!-- oferta final -->
+    <div class="final">
+      <p class="final-tit">Comece hoje. <span class="ouro">Pelo preço de um lanche.</span></p>
+      <div class="final-preco"><s>R$ 279,00</s><b>R$ 29,00</b><span>pagamento único · acesso vitalício</span></div>
       <button class="cta" type="button" data-checkout>
         Garantir acesso por R$ 29
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
-      <p class="close-note">Pagamento processado pela Monetizze · seus dados protegidos</p>
+      <ul class="final-trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Compra segura</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Acesso no WhatsApp</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>Garantia de 7 dias</li>
+      </ul>
+      <p class="final-pag">PIX · Cartão de crédito · Processado pela Monetizze</p>
     </div>
   </div>
 </section>
