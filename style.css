@@ -512,3 +512,14 @@ body{
 @keyframes cenasAnda{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (max-width:820px){.cenas{margin-top:56px}.cena{width:260px;border-radius:14px}.cenas-grupo{gap:12px;padding-right:12px}.cenas-trilho{animation-duration:38s}}
 @media (prefers-reduced-motion:reduce){.cenas-trilho{animation:none}.cenas{overflow-x:auto}}
+
+/* 2º carrossel infinito (fotos de dentro do curso, servidas pelo Wix): anda no sentido contrário,
+   altura fixa e largura conforme a foto, para não cortar imagem em pé nem deitada */
+.fotos{margin-top:22px}
+.fotos-trilho{animation-name:cenasVolta;animation-duration:52s}
+@keyframes cenasVolta{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.foto{flex:none;height:300px;border-radius:18px;overflow:hidden;border:1px solid var(--line-gold);background:#050505;
+  box-shadow:0 20px 50px -24px rgba(212,175,55,.45)}
+.foto img{display:block;height:100%;width:auto;min-width:180px;object-fit:cover}
+@media (max-width:820px){.fotos{margin-top:14px}.foto{height:230px;border-radius:14px}.foto img{min-width:140px}.fotos-trilho{animation-duration:42s}}
+.foto img{color:transparent;font-size:0}
