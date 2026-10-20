@@ -3,7 +3,7 @@
    Para trocar o link, mude só a linha abaixo. Os parâmetros da URL da página
    (utm_*, fbclid, src...) são repassados para o checkout. */
 (function () {
-  var CHECKOUT_URL = 'https://pay.monetizze.com.br/KLK467702';
+  var CHECKOUT_URL = 'https://pay.monetizze.com.br/KLK467702?pix=1';
   var PIXELS = ['1723689928729300', '1426335359705831']; // os eventos vão para todos
   var PRECO = 29.00;
 
