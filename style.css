@@ -423,3 +423,15 @@ em{font-style:normal;font-weight:700;color:transparent;background:var(--gold-gra
   .som-txt span{font-size:11px}
 }
 .v-pr.v-inc{text-decoration:none;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+
+/* página mais limpa (20/10): garantia como uma linha dentro da oferta final */
+.valor-lista li{padding:13px 0}
+.final-gar{display:flex;align-items:center;gap:14px;margin-top:20px;padding:14px;border-radius:14px;background:rgba(212,175,55,.07);border:1px solid var(--line-gold);text-align:left}
+.final-gar p{font-size:14px;color:#e2dbcf;line-height:1.45}
+.final-gar b{color:#fff}
+.selo-p{width:58px;height:58px;padding:3px}
+.selo-p .selo-in b{font-size:22px}
+.selo-p .selo-in span{font-size:8px;letter-spacing:.14em}
+.valor-acao{padding:18px 22px 22px;border-top:1px solid var(--line-gold);text-align:center}
+.valor-acao .final-gar{margin-top:16px}
+@media (max-width:820px){.valor-acao{padding:16px 16px 20px}}
