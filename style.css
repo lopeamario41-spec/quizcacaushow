@@ -541,3 +541,27 @@ body{
 .offer .cta:hover{animation-play-state:running}
 /* carrosséis nunca param (nem no toque nem no mouse) */
 .cenas .cenas-trilho{animation-play-state:running!important}
+
+/* =====================================================================
+   POP-UP DE SAÍDA (oferta de R$ 9)
+   ===================================================================== */
+.saida{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(0,0,0,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .25s}
+.saida.show{opacity:1;pointer-events:auto}
+.saida-caixa{position:relative;width:100%;max-width:400px;padding:30px 24px 22px;border-radius:22px;text-align:center;
+  background:radial-gradient(90% 60% at 50% 0%,rgba(212,175,55,.16),transparent 70%),#070707;border:1px solid var(--line-gold);
+  box-shadow:0 0 0 6px rgba(212,175,55,.05),0 40px 100px -30px rgba(212,175,55,.5);transform:translateY(16px) scale(.97);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.saida.show .saida-caixa{transform:none}
+.saida-x{position:absolute;top:10px;right:12px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.06);color:#e9e2d4;font-size:22px;line-height:1;cursor:pointer}
+.saida-tag{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#f87171}
+.saida-tit{margin-top:10px;font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.15;color:#fff}
+.saida-txt{margin-top:10px;font-size:15px;color:#d6cfc2;line-height:1.5}
+.saida-preco{display:flex;align-items:baseline;justify-content:center;gap:12px;margin:18px 0 18px}
+.saida-preco s{font-size:20px;font-weight:600;color:#bdb6a9;text-decoration-color:#e0483e;text-decoration-thickness:2px}
+.saida-preco b{font-size:58px;font-weight:800;letter-spacing:-.04em;line-height:1;color:transparent;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text}
+.saida-cta{width:100%;animation:ctaPulsa 1.5s ease-in-out infinite}
+.saida-nao{margin-top:12px;border:0;background:none;color:#a8a296;font-size:13px;text-decoration:underline;cursor:pointer}
+.saida-preco{flex-wrap:nowrap;white-space:nowrap}
+.saida-preco s{font-size:18px}
+.saida-preco b{font-size:52px}
+@media (max-width:420px){.saida-preco b{font-size:46px}.saida-tit{font-size:24px}}
