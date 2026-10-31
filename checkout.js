@@ -3,11 +3,11 @@
    Para trocar o link, mude só a linha abaixo. Os parâmetros da URL da página
    (utm_*, fbclid, src...) são repassados para o checkout. */
 (function () {
-  var CHECKOUT_URL = 'https://pay.monetizze.com.br/KLK467702?pix=1';
+  var CHECKOUT_URL = 'https://pay.monetizze.com.br/KDJ467952?pix=1'; // R$ 9 (o de R$ 29 é KLK467702)
   var CHECKOUT_SAIDA = 'https://pay.monetizze.com.br/KDJ467952?pix=1'; // oferta de R$ 9 do pop-up de saída
   var PRECO_SAIDA = 9.00;
   var PIXELS = ['1723689928729300', '1426335359705831']; // os eventos vão para todos
-  var PRECO = 29.00;
+  var PRECO = 9.00;
 
   /* ---------- pixel do Facebook ---------- */
   !function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s); }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
@@ -53,13 +53,14 @@
      Computador: o mouse sai pelo topo da janela (indo fechar a aba).
      Celular: a pessoa aperta VOLTAR (depois de ter tocado em algo na página).
      Aparece uma vez só, e nunca para quem já clicou em comprar. */
+  var SAIDA_ATIVA = PRECO > PRECO_SAIDA; // com a página já em R$ 9 o pop-up não aparece
   var CHAVE = 'saida_r9_visto';
   // uma vez por pessoa a cada 24 h (guardado no aparelho)
   function jaViu() { try { return Date.now() - parseInt(localStorage.getItem(CHAVE) || '0', 10) < 864e5; } catch (e) { return false; } }
   function marcaVisto() { try { localStorage.setItem(CHAVE, String(Date.now())); } catch (e) {} }
   var pop = null;
   function abrirSaida() {
-    if (jaComprou || jaViu() || pop) return false;
+    if (!SAIDA_ATIVA || jaComprou || jaViu() || pop) return false;
     marcaVisto();
     pop = document.createElement('div');
     pop.className = 'saida';
@@ -96,7 +97,7 @@
   // celular: depois do primeiro toque, guarda uma "página" a mais no histórico; o VOLTAR mostra o pop-up
   var armado = false;
   function armar() {
-    if (armado || jaViu()) return;
+    if (!SAIDA_ATIVA || armado || jaViu()) return;
     armado = true;
     try { history.pushState({ saida: 1 }, '', location.href); } catch (e) {}
   }
